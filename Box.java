@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
 public class Box {
-    ArrayList<String> contents = new ArrayList<String>();
+    ArrayList<Thing> contents = new ArrayList<Thing>();
     
     Box() {System.out.println("Box créée");}
 
-    public void add(String truc) {
+    public void add(Thing truc) {
         this.contents.add(truc);
     }
 }
