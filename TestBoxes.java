@@ -108,10 +108,13 @@ public class TestBoxes {
     @Test
     public void testHasRoomFor() {
         Box b = new Box(true, 10);
-        Thing t = new Thing("truc", 9);
         Box b2 = new Box(true, 8);
+        Box b3 = new Box(true, -1);
+        Thing t = new Thing("truc", 9);
         Thing t2 = new Thing("truc2", 9);
+        Thing t3 = new Thing("truc3", 10);
         assertTrue(b.hasRoomFor(t));
+        assertTrue(b3.hasRoomFor(t3));
         assertFalse(b2.hasRoomFor(t2));
     }
 }

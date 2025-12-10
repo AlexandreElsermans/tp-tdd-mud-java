@@ -82,8 +82,8 @@ public class Box {
 
     public boolean hasRoomFor(Thing t) {
         int tCapacity = t.getVolume(); 
-        if (tCapacity > this.getCapacity()) {
-            return false;
-        } return true;
+        if (this.getCapacity() == -1) {
+            return true;
+        } return tCapacity <= this.getCapacity();
     }
 }
