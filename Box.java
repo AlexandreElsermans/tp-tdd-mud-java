@@ -81,9 +81,22 @@ public class Box {
     }
 
     public boolean hasRoomFor(Thing t) {
-        int tCapacity = t.getVolume(); 
+        int tCapacity = t.getVolume();
+        if (this.getStatus() == false) {
+            return false;
+        }
         if (this.getCapacity() == -1) {
             return true;
         } return tCapacity <= this.getCapacity();
     }
+
+    public boolean actionAdd(Thing t) throws RuntimeException{
+        if (this.hasRoomFor(t) == true && this.getStatus() == true) {
+            this.add(t);
+            this.capacity -= t.getVolume();
+            return true;
+        } throw new RuntimeException("Ajout impossible dans la Box");
+    }
+
+    
 }

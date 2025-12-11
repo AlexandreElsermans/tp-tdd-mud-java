@@ -117,4 +117,18 @@ public class TestBoxes {
         assertTrue(b3.hasRoomFor(t3));
         assertFalse(b2.hasRoomFor(t2));
     }
+
+    @Test(expected = RuntimeException.class)
+    public void testActionAddExceptionVolume() {
+        Box b = new Box(true, 10);
+        Thing t = new Thing("bidule", 15);
+        assertTrue(b.actionAdd(t));
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void testActionAddExceptionClose() {
+        Box b = new Box(false, 10);
+        Thing t = new Thing("bidule", 5);
+        assertTrue(b.actionAdd(t));
+    }
 }
