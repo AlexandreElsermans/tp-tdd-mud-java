@@ -15,4 +15,8 @@ public class Thing{
     public int getVolume() {
         return this.volume;
     }
+
+    public void setName(String newName) {
+        this.name = newName;
+    }
 }

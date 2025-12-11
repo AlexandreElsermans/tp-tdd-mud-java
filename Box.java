@@ -98,5 +98,11 @@ public class Box {
         } throw new RuntimeException("Ajout impossible dans la Box");
     }
 
-    
+    public boolean find (String searchName) throws RuntimeException{
+        for (Thing objet : this.getContents()) {
+            if (objet.getName() == searchName && this.getStatus() == true) {
+                return true;
+            }
+        } throw new RuntimeException("Erreur dans la recherche de la chose : " + searchName);
+    }
 }

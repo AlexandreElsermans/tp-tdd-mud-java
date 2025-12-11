@@ -131,4 +131,19 @@ public class TestBoxes {
         Thing t = new Thing("bidule", 5);
         assertTrue(b.actionAdd(t));
     }
+
+    @Test(expected = RuntimeException.class)
+    public void testFindExceptionAbsent() {
+        Box b = new Box(true, 10);
+        Thing t = new Thing("bidule", 5);
+        assertTrue(b.find("bidule"));
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void testFindExceptionClose() {
+        Box b = new Box(false, 10);
+        Thing t = new Thing("bidule", 5);
+        b.actionAdd(t);
+        assertTrue(b.find("bidule"));
+    }
 }
